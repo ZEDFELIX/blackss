@@ -1,0 +1,125 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  header {
+    background-color: #000;
+    border-bottom: 1px solid #222;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    color: #1e90ff;
+    font-size: 2rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  nav li {
+    color: #1e90ff;
+    cursor: pointer;
+  }
+  
+  /* Layout */
+  main {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  /* Feed */
+  .feed {
+    flex: 2;
+  }
+  
+  .post {
+    background-color: #111;
+    border: 1px solid #222;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .user {
+    font-weight: bold;
+    color: #1e90ff;
+  }
+  
+  .user span {
+    font-weight: normal;
+    color: #888;
+    margin-left: 10px;
+  }
+  
+  .actions {
+    margin-top: 0.5rem;
+  }
+  
+  .actions button {
+    background: none;
+    border: none;
+    color: #1e90ff;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Sidebar */
+  aside {
+    flex: 1;
+  }
+  
+  .trending, .follow {
+    background-color: #111;
+    border: 1px solid #222;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+  }
+  
+  .trending h3, .follow h3 {
+    color: #1e90ff;
+    margin-bottom: 1rem;
+  }
+  
+  .trending ul, .follow ul {
+    list-style: none;
+    padding-left: 1rem;
+  }
+  
+  .trending li, .follow li {
+    margin-bottom: 0.5rem;
+    color: #ddd;
+  }
+  
+  .follow-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
