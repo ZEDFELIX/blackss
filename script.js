@@ -1,39 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const storiesContainer = document.getElementById('storiesContainer');
-  if (storiesContainer) {
-    window.submitStory = submitStory;
-    window.copyLink = copyLink;
-  }
-});
+  document.querySelectorAll('.like-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('liked');
+      if (btn.classList.contains('liked')) {
+        btn.innerHTML = '<span class="icon">&#9829;</span> Liked';
+      } else {
+        btn.innerHTML = '<span class="icon">&#9825;</span> Like';
+      }
+    });
+  });
 
-function submitStory() {
-    const input = document.getElementById('storyInput');
-    if (!input) return;
-    const text = input.value.trim();
-    if (!text) return;
+  document.querySelectorAll('.action-btn:not(.like-btn)').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.style.color = 'var(--accent)';
+      setTimeout(() => { btn.style.color = ''; }, 400);
+    });
+  });
 
-    const timestamp = new Date().toLocaleString();
-    const id = Math.random().toString(36).substr(2, 9);
+  document.querySelectorAll('.trending li').forEach(li => {
+    li.addEventListener('click', () => {
+      li.style.background = 'rgba(124, 92, 252, 0.15)';
+      li.style.color = '#a78bfa';
+      setTimeout(() => { li.style.background = ''; li.style.color = ''; }, 600);
+    });
+  });
 
-    const storyEl = document.createElement('div');
-    storyEl.className = 'story';
-    storyEl.id = `story-${id}`;
-    storyEl.innerHTML = `
-      <p>${text}</p>
-      <div class="timestamp">${timestamp}</div>
-      <button class="share-btn" onclick="copyLink('${id}')">Share Link</button>
-    `;
-
-    const container = document.getElementById('storiesContainer');
-    if (!container) return;
-    container.prepend(storyEl);
-    input.value = '';
-  }
-
-  function copyLink(id) {
-    const base = window.location.href.split('#')[0];
-    const link = `${base}#story-${id}`;
-    navigator.clipboard.writeText(link).then(() => {
-      alert('Story link copied!');
+  const followBtn = document.querySelector('.follow-btn');
+  if (followBtn) {
+    followBtn.addEventListener('click', () => {
+      if (followBtn.textContent === 'Follow') {
+        followBtn.textContent = 'Following';
+        followBtn.style.background = 'rgba(124, 92, 252, 0.15)';
+        followBtn.style.color = '#a78bfa';
+        followBtn.style.boxShadow = 'none';
+      } else {
+        followBtn.textContent = 'Follow';
+        followBtn.style.background = '';
+        followBtn.style.color = '';
+        followBtn.style.boxShadow = '';
+      }
     });
   }
+});

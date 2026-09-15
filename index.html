@@ -4,64 +4,87 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blacks</title>
-  <meta name="description" content="Blacks — a simple social feed to share stories, connect, and follow trending topics.">
+  <meta name="description" content="Blacks — a premium social feed to share stories, connect, and follow trending topics.">
   <meta property="og:title" content="Blacks">
-  <meta property="og:description" content="A simple social feed to share stories, connect, and follow trending topics.">
+  <meta property="og:description" content="A premium social feed to share stories, connect, and follow trending topics.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖤</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <header>
-    <h1>Blacks</h1>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Connect</a></li>
-        <li><a href="#">Stories</a></li>
-        <li><a href="#">Messages</a></li>
-        <li><a href="#">Profile</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <a href="#" class="logo">BLACKS</a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Connect</a></li>
+          <li><a href="#">Stories</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="feed">
       <div class="post">
-        <div class="user">Jane Doe <span>3h</span></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at purus pulvinar.</p>
+        <div class="post-header">
+          <div class="avatar">JD</div>
+          <div class="user-info">
+            <div class="user">Jane Doe</div>
+            <div class="time">3 hours ago</div>
+          </div>
+        </div>
+        <p class="post-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at purus pulvinar, vitae dignissim metus pretium. Sed ac odio quis nisi accumsan tincidunt.</p>
         <div class="actions">
-          <button>👍 Like</button>
-          <button>💬 Comment</button>
-          <button>🔗 Share</button>
+          <button class="action-btn like-btn"><span class="icon">&#9825;</span> Like</button>
+          <button class="action-btn"><span class="icon">&#9993;</span> Comment</button>
+          <button class="action-btn"><span class="icon">&#8618;</span> Share</button>
         </div>
       </div>
       <div class="post">
-        <div class="user">John Smith <span>5h</span></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at purus pulvinar.</p>
+        <div class="post-header">
+          <div class="avatar">JS</div>
+          <div class="user-info">
+            <div class="user">John Smith</div>
+            <div class="time">5 hours ago</div>
+          </div>
+        </div>
+        <p class="post-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at purus pulvinar, vitae dignissim metus pretium. Sed ac odio quis nisi accumsan tincidunt.</p>
         <div class="actions">
-          <button>👍 Like</button>
-          <button>💬 Comment</button>
-          <button>🔗 Share</button>
+          <button class="action-btn like-btn"><span class="icon">&#9825;</span> Like</button>
+          <button class="action-btn"><span class="icon">&#9993;</span> Comment</button>
+          <button class="action-btn"><span class="icon">&#8618;</span> Share</button>
         </div>
       </div>
     </section>
 
     <aside>
-      <div class="trending">
+      <div class="trending glass-card">
         <h3>Trending</h3>
         <ul>
-          <li>#Lorem</li>
-          <li>#Dolor</li>
-          <li>#Consectetur</li>
-          <li>#Adipiscing</li>
+          <li><span class="tag">#</span>Lorem</li>
+          <li><span class="tag">#</span>Dolor</li>
+          <li><span class="tag">#</span>Consectetur</li>
+          <li><span class="tag">#</span>Adipiscing</li>
         </ul>
       </div>
-      <div class="follow">
+      <div class="follow glass-card">
         <h3>Who to follow</h3>
         <ul>
-          <li>Esther Howard</li>
-          <li>Courtney Henry</li>
+          <li>
+            <div class="follow-avatar">EH</div>
+            <span>Esther Howard</span>
+          </li>
+          <li>
+            <div class="follow-avatar">CH</div>
+            <span>Courtney Henry</span>
+          </li>
         </ul>
         <button class="follow-btn">Follow</button>
       </div>
